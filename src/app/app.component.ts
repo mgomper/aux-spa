@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import {Component, HostListener} from '@angular/core';
 
 @Component({
   selector: 'app-root',
@@ -7,12 +7,32 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+  private innerWidth: number;
+  status: boolean = false;
+  state = 'none';
+
   constructor(){
 
   }
 
-  status: boolean = false;
+  onTopButtonClick(){
+    document.body.scrollTop = 0;
+    document.documentElement.scrollTop = 0;
+  }
+
+  @HostListener("window:scroll", [])
+  onScroll(): string {
+    let carouselElement = document.getElementById('block2');
+    let carouselRect = carouselElement.getBoundingClientRect();
+    let carouselYPos = carouselRect.bottom;
+
+    if (window.pageYOffset <= carouselYPos) {
+      return this.state;
+    }
+  }
+
   clickEvent(){
     this.status = !this.status;
   }
+
 }

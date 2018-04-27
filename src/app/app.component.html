@@ -1,26 +1,36 @@
-<div class="block1">
+<i class="fas fa-arrow-up up fa-3x" (click)="onTopButtonClick()" [style.display]="onScroll()"></i>
+
+<div id="block1">
   <div class="middle-crop">
     <div class="header">
       <img class="logo" src="../assets/logo.png">
+
       <div id="nav-icon4" class="pull-right" (click)="clickEvent()" [ngClass]="status ? 'open' : ''">
         <span></span>
         <span></span>
         <span></span>
       </div>
 
+        <div class="links pull-right" *ngIf="status">
+          <p class="pull-right linkx"><a class="effect-underline " href="#block4">Contact</a></p>
+          <p class="pull-right linkx"><a class="effect-underline " href="#block3">Our plan</a></p>
+          <p class="pull-right linkx"><a class="effect-underline " href="#block2">About</a></p>
+        </div>
+
+
+  </div>
       <h1 id="main-text">
         Helping people find their path, that is our job.
       </h1>
         <p id="sub-text">
-          <a href="#" class="effect-underline">Try our new program!</a>
+          <a href="#block3" class="effect-underline">Try our new program!</a>
         </p>
 
       </div>
     </div>
-  </div>
 
 
-<div class="block2">
+<div id="block2">
   <div class="middle-crop">
 
 
@@ -52,7 +62,7 @@
     </div>
 </div>
 
-<div class="block3">
+<div id="block3">
   <div class="middle-crop">
     <div class="bottomtext">
       <img  id="foot-img" src="../assets/support.png">
@@ -64,7 +74,7 @@
   </div>
 </div>
 
-<div class="block4">
+<div id="block4">
   <div class="middle-crop">
     <h2 id="footer-text">Get in touch!</h2>
 
