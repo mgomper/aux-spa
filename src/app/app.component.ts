@@ -8,12 +8,9 @@ import {Component, HostListener} from '@angular/core';
 export class AppComponent {
 
   private innerWidth: number;
+  mobileWidth: boolean;
   status: boolean = false;
   state = 'none';
-
-  constructor(){
-
-  }
 
   onTopButtonClick(){
     document.body.scrollTop = 0;
@@ -33,6 +30,27 @@ export class AppComponent {
 
   clickEvent(){
     this.status = !this.status;
+  }
+
+  constructor() {
+    if(window.innerWidth < 999){
+      this.mobileWidth = true;
+    }else{
+      this.mobileWidth = false;
+    }
+  }
+
+
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.innerWidth = window.innerWidth;
+    if (innerWidth < 999){
+      this.mobileWidth = true;
+    }
+    else if (innerWidth > 999){
+      this.mobileWidth = false;
+    }
   }
 
 }

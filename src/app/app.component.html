@@ -11,13 +11,19 @@
         <span></span>
       </div>
 
-        <div class="links pull-right" *ngIf="status">
-          <p class="pull-right linkx"><a class="effect-underline " href="#block4">Contact</a></p>
-          <p class="pull-right linkx"><a class="effect-underline " href="#block3">Our plan</a></p>
-          <p class="pull-right linkx"><a class="effect-underline " href="#block2">About</a></p>
+      <div class="links pull-right" *ngIf="status && !mobileWidth">
+        <p class="pull-right linkx"><a class="effect-underline " href="#block4">Contact</a></p>
+        <p class="pull-right linkx"><a class="effect-underline " href="#block3">Our plan</a></p>
+        <p class="pull-right linkx"><a class="effect-underline " href="#block2">About</a></p>
+      </div>
+
+      <div class="mobiledivider">
+        <div class="links" *ngIf="status && mobileWidth">
+          <p class=" linkx"><a class="effect-underline " style="margin-right: 20px" href="#block4">Contact</a></p>
+          <p class=" linkx"><a class="effect-underline " style="margin-right: 20px" href="#block3">Our plan</a></p>
+          <p class=" linkx"><a class="effect-underline "  href="#block2">About</a></p>
         </div>
-
-
+    </div>
   </div>
       <h1 id="main-text">
         Helping people find their path, that is our job.
@@ -42,7 +48,9 @@
       <div class="content-area">
         <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus massa sit amet mattis lobortis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc nec mauris at neque vehicula blandit. Integer sed maximus mi. Integer ex felis, sollicitudin ac maximus eu, fermentum at enim. Vestibulum tellus lacus, rutrum non orci interdum, interdum molestie leo. Vivamus ex dolor, molestie eget massa eu, iaculis tempus eros. Aliquam id ornare orci. Proin in dui mauris. Maecenas ante nisi, interdum id malesuada vel, viverra eget massa. Donec dictum, nec tincidunt lectus efficitur.
         </p>
-        <img src="../assets/note.png" class="imgclass">
+        <img  *ngIf="!mobileWidth" src="../assets/note.png" class="imgclass">
+        <img  *ngIf="mobileWidth" src="../assets/002-notepad.png" class="imgclass">
+
       </div>
     </div>
 
@@ -54,7 +62,8 @@
       <div class="content-area">
         <p class="main-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dapibus massa sit amet mattis lobortis. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nunc nec mauris at neque vehicula blandit. Integer sed maximus mi. Integer ex felis, sollicitudin ac maximus eu, fermentum at enim. Vestibulum tellus lacus, rutrum non orci interdum, interdum molestie leo. Vivamus ex dolor, molestie eget massa eu, iaculis tempus eros. Aliquam id ornare orci. Proin in dui mauris. Maecenas ante nisi, interdum id malesuada vel, viverra eget massa. Donec dictum, nec tincidunt lectus efficitur.
         </p>
-        <img src="../assets/idea.png" class="imgclass">
+        <img *ngIf="!mobileWidth" src="../assets/idea.png" class="imgclass">
+        <img *ngIf="mobileWidth" src="../assets/003-idea.png" class="imgclass">
       </div>
     </div>
 
@@ -65,10 +74,12 @@
 <div id="block3">
   <div class="middle-crop">
     <div class="bottomtext">
-      <img  id="foot-img" src="../assets/support.png">
+      <img *ngIf="!mobileWidth" id="foot-img" src="../assets/support.png">
       <h1 class="h1-ex2">Let's get started</h1>
-    <p style="color: black;">We hope you are excited about our program.<br> Let's make your ideas a reality together!</p>
+    <p style="color: black;" class="bottext">We hope you are excited about our program.<br> Let's make your ideas a reality together!</p>
       <p id="gethelp"><a href="https://mgomper.nl" class="effect-underline">Get personalised help!</a></p>
+      <img *ngIf="mobileWidth" id="foot-img" src="../assets/001-pencil.png">
+
     </div>
 
   </div>
