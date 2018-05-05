@@ -1,4 +1,5 @@
 import {Component, HostListener} from '@angular/core';
+import * as $ from 'jquery';
 
 @Component({
   selector: 'app-root',
@@ -52,5 +53,27 @@ export class AppComponent {
       this.mobileWidth = false;
     }
   }
+
+  onScrollTop(){
+    $('html, body').animate({scrollTop:0},'50');
+  }
+
+  onScrollContact(){
+      $('html').animate({
+        scrollTop: $("#block4").offset().top
+      }, 'slow');
+}
+
+  onScrollOurPlan(){
+      $('html, body').animate({
+        scrollTop: $("#block3").offset().top
+      }, 'slow');
+ }
+
+  onScrollAbout(){
+      $('html, body').animate({
+        scrollTop: $("#block2").offset().top
+      }, 'slow');
+   }
 
 }
